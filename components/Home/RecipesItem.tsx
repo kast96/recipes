@@ -1,10 +1,15 @@
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { RootStackParamList } from "../../App";
 import { colors } from "../../assets/colors/colors";
 import { RecipesType } from "../../assets/data/recipesData";
 
 export const RecipesItem: React.FC<{item: RecipesType}> = ({item}) => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Home'>>()
+
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Detail', {item})}>
       <View style={styles.imageWrapper}>
         <Image style={styles.image} source={item.images.medium} />
       </View>

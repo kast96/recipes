@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from './components/Home/Home';
 import { Detail } from './components/Detail/Detail';
+import { RecipesType } from './assets/data/recipesData';
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
@@ -57,11 +58,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.background
+    backgroundColor: colors.background,
   }
 });
 
 export type RootStackParamList = {
 	Home: undefined
-	Detail: undefined
+	Detail: {
+		item: RecipesType
+	}
 }

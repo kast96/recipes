@@ -9,6 +9,7 @@ export const recipesData = [
   {
     id: 'pizza-la-peperoni',
     name: 'Pizza la peperoni',
+    categories: ['pizza'],
     images: {
       medium: PizzaImg,
       large: PizzaImg,
@@ -17,6 +18,7 @@ export const recipesData = [
   {
     id: 'biff-corn-sticks-with',
     name: 'Biff Corn Sticks with ...',
+    categories: ['meat'],
     images: {
       medium: BiffImg,
       large: BiffImg,
@@ -25,6 +27,7 @@ export const recipesData = [
   {
     id: 'potato-sticks',
     name: 'Potato Sticks',
+    categories: ['meat'],
     images: {
       medium: PotatoImg,
       large: PotatoImg,
@@ -33,14 +36,7 @@ export const recipesData = [
   {
     id: 'poke',
     name: 'Poke',
-    images: {
-      medium: PokeImg,
-      large: PokeDetailImg,
-    }
-  },
-  {
-    id: 'poke2',
-    name: 'Poke2',
+    categories: ['burgers', 'meat'],
     images: {
       medium: PokeImg,
       large: PokeDetailImg,
@@ -51,6 +47,7 @@ export const recipesData = [
 export type RecipesType = {
   id: string
   name: string
+  categories?: Array<string>
   images: {
     medium: ImageSourcePropType
     large: ImageSourcePropType
