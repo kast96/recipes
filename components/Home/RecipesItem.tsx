@@ -14,7 +14,7 @@ export const RecipesItem: React.FC<{item: RecipesType}> = ({item}) => {
         <Image style={styles.image} source={item.images.medium} />
       </View>
       <View style={styles.titleWrapper}>
-        <Text style={styles.title}>{item.name}</Text>
+        <Text style={styles.title} numberOfLines={2}>{item.name}</Text>
       </View>
     </TouchableOpacity>
   )

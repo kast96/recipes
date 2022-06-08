@@ -17,7 +17,7 @@ export const recipesData = [
   },
   {
     id: 'biff-corn-sticks-with',
-    name: 'Biff Corn Sticks with ...',
+    name: 'Biff Corn Sticks with Biff Corn Sticks',
     categories: ['meat'],
     images: {
       medium: BiffImg,
