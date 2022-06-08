@@ -87,7 +87,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   contentWrapper: {
-    padding: 30,
+    paddingTop: 30,
+    paddingHorizontal: 30,
     marginTop: -20,
     backgroundColor: colors.background,
     borderTopLeftRadius: 20,

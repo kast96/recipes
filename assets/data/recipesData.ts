@@ -13,7 +13,14 @@ export const recipesData = [
     images: {
       medium: PizzaImg,
       large: PizzaImg,
-    }
+    },
+    compound: [
+      {name: 'Dough', weight: '300g'},
+      {name: 'Mayonnaise', weight: '2 spoon'},
+      {name: 'Tomato sauce', weight: '2 spoon'},
+      {name: 'Peperoni', weight: '50g'},
+      {name: 'Cheese', weight: '100g'},
+    ]
   },
   {
     id: 'biff-corn-sticks-with',
@@ -22,7 +29,8 @@ export const recipesData = [
     images: {
       medium: BiffImg,
       large: BiffImg,
-    }
+    },
+    compound: []
   },
   {
     id: 'potato-sticks',
@@ -31,7 +39,8 @@ export const recipesData = [
     images: {
       medium: PotatoImg,
       large: PotatoImg,
-    }
+    },
+    compound: []
   },
   {
     id: 'poke',
@@ -40,7 +49,14 @@ export const recipesData = [
     images: {
       medium: PokeImg,
       large: PokeDetailImg,
-    }
+    },
+    compound: [
+      {name: 'Dough', weight: '300g'},
+      {name: 'Mayonnaise', weight: '2 spoon'},
+      {name: 'Tomato sauce', weight: '2 spoon'},
+      {name: 'Peperoni', weight: '50g'},
+      {name: 'Cheese', weight: '100g'},
+    ]
   }
 ] as Array<RecipesType>
 
@@ -51,5 +67,11 @@ export type RecipesType = {
   images: {
     medium: ImageSourcePropType
     large: ImageSourcePropType
-  }
+  },
+  compound: Array<CompoundType>
+}
+
+export type CompoundType = {
+  name: string
+  weight: string
 }
