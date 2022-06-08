@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FlatList, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { colors } from "../../assets/colors/colors";
@@ -7,6 +8,16 @@ import { CategoryItem } from "./CatagoryItem";
 import { RecipesItem } from "./RecipesItem";
 
 export const Home = () => {
+	const [filterCategories, setFilterCategories] = useState<Array<string>>([])
+
+	const onPressCategory = (id: string) => {
+		setFilterCategories((filterCategories.includes(id)) ? filterCategories.filter(category => category !== id) : [...filterCategories, id])
+	}
+
+	let categoriesWithOnPress = categoriesData.map(category => {return {...category, onPress: onPressCategory, active: filterCategories.includes(category.id)}})
+
+	let recipes = (filterCategories.length) ? recipesData.filter(recipe => recipe.categories.some(category => filterCategories.includes(category))) : recipesData
+
 	return (
 		<View>
 			<View style={styles.header}>
@@ -28,7 +39,8 @@ export const Home = () => {
 						</View>
 						<View style={styles.categoriesWrapper}>
 							<FlatList
-								data={categoriesData}
+								contentContainerStyle={styles.categoriesList} 
+								data={categoriesWithOnPress}
 								renderItem={CategoryItem}
 								keyExtractor={(item) => item.id}
 								horizontal={true}
@@ -41,7 +53,7 @@ export const Home = () => {
 							<Text style={styles.sectionTitle}>Recipes</Text>
 						</View>
 						<View style={styles.recipesWrapper}>
-							{recipesData.map(item => <View key={item.id} style={styles.recipeWrapper}><RecipesItem key={item.id} item={item} /></View>)}
+							{recipes.map(item => <View key={item.id} style={styles.recipeWrapper}><RecipesItem key={item.id} item={item} /></View>)}
 						</View>
 					</View>
 				</View>
@@ -96,6 +108,9 @@ const styles = StyleSheet.create({
 	},
 	categoriesWrapper: {
 		flexDirection: 'row',
+	},
+	categoriesList: {
+		paddingHorizontal: 30,
 	},
 	recipesWrapper: {
 		flex: 1,

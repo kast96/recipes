@@ -70,7 +70,7 @@ export const recipesData = [
 export type RecipesType = {
   id: string
   name: string
-  categories?: Array<string>
+  categories: Array<string>
   images: {
     medium: ImageSourcePropType
     large: ImageSourcePropType
