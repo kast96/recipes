@@ -9,8 +9,8 @@ export const Compound = () => {
   
   return (
     <View>
-      {item.compound.map(compoundItem =>
-        <View key={compoundItem.name}>
+      {item.compound.map((compoundItem, key) =>
+        <View key={key}>
           <Text style={styles.compoundName}>{compoundItem.name}: <Text style={styles.compoundWeight}>{compoundItem.weight}</Text></Text>
         </View>  
       )}

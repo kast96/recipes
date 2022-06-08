@@ -20,7 +20,8 @@ export const recipesData = [
       {name: 'Tomato sauce', weight: '2 spoon'},
       {name: 'Peperoni', weight: '50g'},
       {name: 'Cheese', weight: '100g'},
-    ]
+    ],
+    steps: []
   },
   {
     id: 'biff-corn-sticks-with',
@@ -30,7 +31,8 @@ export const recipesData = [
       medium: BiffImg,
       large: BiffImg,
     },
-    compound: []
+    compound: [],
+    steps: []
   },
   {
     id: 'potato-sticks',
@@ -40,7 +42,8 @@ export const recipesData = [
       medium: PotatoImg,
       large: PotatoImg,
     },
-    compound: []
+    compound: [],
+    steps: []
   },
   {
     id: 'poke',
@@ -56,6 +59,10 @@ export const recipesData = [
       {name: 'Tomato sauce', weight: '2 spoon'},
       {name: 'Peperoni', weight: '50g'},
       {name: 'Cheese', weight: '100g'},
+    ],
+    steps: [
+      {title: 'Clear food', description: 'Clear food and wash'},
+      {title: 'Clear food', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis.'},
     ]
   }
 ] as Array<RecipesType>
@@ -69,9 +76,15 @@ export type RecipesType = {
     large: ImageSourcePropType
   },
   compound: Array<CompoundType>
+  steps: Array<StepType>
 }
 
 export type CompoundType = {
   name: string
   weight: string
+}
+
+export type StepType = {
+  title: string
+  description: string
 }
