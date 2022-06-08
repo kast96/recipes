@@ -1,10 +1,14 @@
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Dimensions, ImageBackground, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, FlatList, ImageBackground, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { RootStackParamList } from "../../App";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { colors } from "../../assets/colors/colors";
 import { categoriesData } from "../../assets/data/categoriesData";
+import { TabType } from "../common/Tabs/Tab";
+import { Tabs } from "../common/Tabs/Tabs";
+import { Compound } from "./Compound";
+import { Recipe } from "./Recipe";
 
 export const Detail = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'Detail'>>()
@@ -15,7 +19,12 @@ export const Detail = () => {
     ..._item,
     categories: categoriesData.filter(category => _item.categories.includes(category.id))
   }
-  
+
+  const tabs = [
+    {id: 'compound', name: 'Compound', active: true, component: Compound},
+    {id: 'recipe', name: 'Recipe', active: false, component: Recipe}
+  ] as Array<TabType>
+
   return (
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
@@ -33,6 +42,9 @@ export const Detail = () => {
               {item.categories && 
                 <Text style={styles.categories}>{item.categories.map(category => category.name).join(' / ')}</Text>
               }
+            </View>
+            <View style={styles.tabs}>
+              <Tabs tabs={tabs} />
             </View>
           </View>
         </View>
@@ -98,5 +110,8 @@ const styles = StyleSheet.create({
 		color: colors.textLight,
     textAlign: 'center',
     paddingBottom: 15,
+  },
+  tabs: {
+
   },
 });

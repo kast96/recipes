@@ -41,7 +41,7 @@ export const Home = () => {
 							<Text style={styles.sectionTitle}>Recipes</Text>
 						</View>
 						<View style={styles.recipesWrapper}>
-							{recipesData.map(item => <View style={styles.recipeWrapper}><RecipesItem key={item.id} item={item} /></View>)}
+							{recipesData.map(item => <View key={item.id} style={styles.recipeWrapper}><RecipesItem key={item.id} item={item} /></View>)}
 						</View>
 					</View>
 				</View>
