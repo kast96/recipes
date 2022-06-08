@@ -5,7 +5,7 @@ import { RootStackParamList } from "../../App";
 import { colors } from "../../assets/colors/colors";
 import { RecipesType } from "../../assets/data/recipesData";
 
-export const RecipesItem: React.FC<{item: RecipesType}> = ({item}) => {
+export const RecipesItem: React.FC<{item: RecipesType & {searchIndex?: number}}> = ({item}) => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Home'>>()
 
   return (

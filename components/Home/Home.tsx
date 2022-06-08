@@ -8,15 +8,28 @@ import { CategoryItem } from "./CatagoryItem";
 import { RecipesItem } from "./RecipesItem";
 
 export const Home = () => {
+	const [searchText, setSearchText] = useState<string>('')
 	const [filterCategories, setFilterCategories] = useState<Array<string>>([])
 
 	const onPressCategory = (id: string) => {
 		setFilterCategories((filterCategories.includes(id)) ? filterCategories.filter(category => category !== id) : [...filterCategories, id])
 	}
 
-	let categoriesWithOnPress = categoriesData.map(category => {return {...category, onPress: onPressCategory, active: filterCategories.includes(category.id)}})
+	let categoriesWithOnPress = categoriesData.map(category => ({...category, onPress: onPressCategory, active: filterCategories.includes(category.id)}))
 
-	let recipes = (filterCategories.length) ? recipesData.filter(recipe => recipe.categories.some(category => filterCategories.includes(category))) : recipesData
+	let recipesWithCategoryFilter = (filterCategories.length) ? recipesData.filter(recipe => recipe.categories.some(category => filterCategories.includes(category))) : recipesData
+	
+	let searches = searchText.split(' ').filter(search => search.length)
+	
+	let recipes = recipesWithCategoryFilter.map(recipe => ({...recipe, searchIndex: 0}))
+	if (searches.length) {
+		recipes = recipes.map(recipe => ({
+			...recipe,
+			searchIndex: searches.filter(search => recipe.name.indexOf(search) >= 0).length
+		}))
+		recipes = recipes.filter(recipe => recipe.searchIndex > 0)
+		recipes.sort((a, b) => b.searchIndex - a.searchIndex)
+	}
 
 	return (
 		<View>
@@ -27,7 +40,7 @@ export const Home = () => {
 				<View style={styles.scrollViewWrapper}>
 					<View style={styles.container}>
 						<View style={styles.searchWrapper}>
-							<TextInput style={styles.searchInput} placeholder="Find" />
+							<TextInput style={styles.searchInput} placeholder="Find" onChangeText={setSearchText} value={searchText} />
 							<TouchableOpacity style={styles.searchIconWrapper}>
 							<FontAwesome5 name='search' size={16} color={colors.main} />
 							</TouchableOpacity>
