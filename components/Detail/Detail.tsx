@@ -9,6 +9,7 @@ import { TabType } from "../common/Tabs/Tab";
 import { Tabs } from "../common/Tabs/Tabs";
 import { Compound } from "./Compound";
 import { Recipe } from "./Recipe";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const Detail = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'Detail'>>()
@@ -27,8 +28,14 @@ export const Detail = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent backgroundColor="transparent" />
+      <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <ImageBackground source={item.images.large} style={styles.background} imageStyle={styles.backgroundImage} resizeMode="cover" />
+      <LinearGradient
+        colors={['rgba(0,0,0,0.8)', 'transparent']}
+        start={{x: 0.0, y: 0.0}}
+        end={{x: 0.0, y: 0.5}}
+        style={styles.imageOverlay}
+      />
       <ScrollView>
         <View style={styles.scrollViewWrapper}>
           <View style={styles.imageContentWrapper}>
@@ -71,6 +78,11 @@ const styles = StyleSheet.create({
   scrollViewWrapper: {
     marginTop: StatusBar.currentHeight,
     paddingBottom: 60,
+  },
+  imageOverlay: {
+    position: 'absolute',
+    width: '100%',
+    height: height * 0.25,
   },
   imageContentWrapper: {
     paddingHorizontal: 30,

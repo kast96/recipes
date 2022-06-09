@@ -32,13 +32,14 @@ export const Home = () => {
 	}
 
 	return (
-		<View>
+		<View style={styles.container}>
+			<StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 			<View style={styles.header}>
 				<Text style={styles.title}>Recipes</Text>
 			</View>
 			<ScrollView>
 				<View style={styles.scrollViewWrapper}>
-					<View style={styles.container}>
+					<View style={styles.containerWrapper}>
 						<View style={styles.searchWrapper}>
 							<TextInput style={styles.searchInput} placeholder="Find" onChangeText={setSearchText} value={searchText} />
 							<TouchableOpacity style={styles.searchIconWrapper}>
@@ -47,7 +48,7 @@ export const Home = () => {
 						</View>
 					</View>
 					<View style={styles.section}>
-						<View style={styles.container}>
+						<View style={styles.containerWrapper}>
 							<Text style={styles.sectionTitle}>Categories</Text>
 						</View>
 						<View style={styles.categoriesWrapper}>
@@ -62,7 +63,7 @@ export const Home = () => {
 						</View>
 					</View>
 					<View style={styles.section}>
-						<View style={styles.container}>
+						<View style={styles.containerWrapper}>
 							<Text style={styles.sectionTitle}>Recipes</Text>
 						</View>
 						<View style={styles.recipesWrapper}>
@@ -77,6 +78,9 @@ export const Home = () => {
 
 const styles = StyleSheet.create({
 	container: {
+		backgroundColor: colors.background,
+	},
+	containerWrapper: {
 		paddingHorizontal: 30,
 	},
 	header: {
