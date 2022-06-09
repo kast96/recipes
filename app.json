@@ -1,0 +1,18 @@
+{
+    "expo": {
+      "name": "Recipes",
+      "icon": "./assets/images/icon.png",
+      "version": "0.0.1",
+      "slug": "recipes",
+      "ios": {
+        "bundleIdentifier": "com.kast96.recipes",
+        "buildNumber": "0.0.1"
+      },
+      "android": {
+        "package": "com.kast96.recipes",
+        "versionCode": 1
+      },
+      "orientation": "portrait",
+      "description": ""
+    }
+  }
