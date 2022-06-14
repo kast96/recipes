@@ -35,13 +35,13 @@ export const Home = () => {
 		<View style={styles.container}>
 			<StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 			<View style={styles.header}>
-				<Text style={styles.title}>Recipes</Text>
+				<Text style={styles.title}>Рецепты</Text>
 			</View>
 			<ScrollView>
 				<View style={styles.scrollViewWrapper}>
 					<View style={styles.containerWrapper}>
 						<View style={styles.searchWrapper}>
-							<TextInput style={styles.searchInput} placeholder="Find" onChangeText={setSearchText} value={searchText} />
+							<TextInput style={styles.searchInput} placeholder="Поиск" onChangeText={setSearchText} value={searchText} />
 							<TouchableOpacity style={styles.searchIconWrapper}>
 							<FontAwesome5 name='search' size={16} color={colors.main} />
 							</TouchableOpacity>
@@ -49,7 +49,7 @@ export const Home = () => {
 					</View>
 					<View style={styles.section}>
 						<View style={styles.containerWrapper}>
-							<Text style={styles.sectionTitle}>Categories</Text>
+							<Text style={styles.sectionTitle}>Категории</Text>
 						</View>
 						<View style={styles.categoriesWrapper}>
 							<FlatList
@@ -64,7 +64,7 @@ export const Home = () => {
 					</View>
 					<View style={styles.section}>
 						<View style={styles.containerWrapper}>
-							<Text style={styles.sectionTitle}>Recipes</Text>
+							<Text style={styles.sectionTitle}>Рецепты</Text>
 						</View>
 						<View style={styles.recipesWrapper}>
 							{recipes.map(item => <View key={item.id} style={styles.recipeWrapper}><RecipesItem key={item.id} item={item} /></View>)}

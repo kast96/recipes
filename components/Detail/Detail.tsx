@@ -22,8 +22,8 @@ export const Detail = () => {
   }
 
   const tabs = [
-    {id: 'compound', name: 'Compound', active: true, component: Compound},
-    {id: 'recipe', name: 'Recipe', active: false, component: Recipe}
+    {id: 'compound', name: 'Состав', active: true, component: Compound},
+    {id: 'recipe', name: 'Рецепт', active: false, component: Recipe}
   ] as Array<TabType>
 
   return (
