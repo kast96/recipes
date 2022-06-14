@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { Path } from "react-native-svg"
 
-export const svgPizzaSlice = ({fill, ...props}) => {
+export const SvgPizzaSlice = ({fill, ...props}) => {
   return (
     <Svg
       viewBox="0 0 33 33"

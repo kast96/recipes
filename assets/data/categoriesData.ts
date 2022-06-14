@@ -1,34 +1,52 @@
-import { svgDrumstickBite } from "../images/categories/svgDrumstickBite";
+import { SvgDrumstickBite } from "../images/categories/SvgDrumstickBite";
 import { SvgHamburger } from "../images/categories/SvgHamburger";
-import { svgIceCream } from "../images/categories/svgIceCream";
-import { svgPepperHot } from "../images/categories/svgPepperHot";
-import { svgPizzaSlice } from "../images/categories/svgPizzaSlice";
+import { SvgIceCream } from "../images/categories/SvgIceCream";
+import { SvgBeer } from "../images/categories/SvgBeer";
+import { SvgSoup } from "../images/categories/SvgSoup";
+import { SvgUtensils } from "../images/categories/SvgUtensils";
+import { SvgSeedling } from "../images/categories/SvgSeedling";
+import { SvgGlassMartiniAlt } from "../images/categories/SvgGlassMartiniAlt";
 
 export const categoriesData = [
   {
+    id: 'soup',
+    name: 'Супы',
+    icon: SvgSoup,
+  },
+  {
+    id: 'secound',
+    name: 'Втрое',
+    icon: SvgUtensils,
+  },
+  {
+    id: 'salad',
+    name: 'Салаты',
+    icon: SvgSeedling,
+  },
+  {
+    id: 'drink',
+    name: 'Напитки',
+    icon: SvgGlassMartiniAlt,
+  },
+  {
     id: 'burgers',
-    name: 'Burgers',
+    name: 'Фастфуд',
     icon: SvgHamburger,
   },
   {
+    id: 'beer',
+    name: 'Пивная',
+    icon: SvgBeer,
+  },
+  {
     id: 'meat',
-    name: 'Meat',
-    icon: svgDrumstickBite,
-  },
-  {
-    id: 'pepper',
-    name: 'Pepper',
-    icon: svgPepperHot,
-  },
-  {
-    id: 'pizza',
-    name: 'Pizza',
-    icon: svgPizzaSlice,
+    name: 'Мясные',
+    icon: SvgDrumstickBite,
   },
   {
     id: 'ice',
-    name: 'Ice',
-    icon: svgIceCream,
+    name: 'Десерты',
+    icon: SvgIceCream,
   }
 ] as Array<CategoryType>
 

@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { Path } from "react-native-svg"
 
-export const svgIceCream = ({fill, ...props}) => {
+export const SvgIceCream = ({fill, ...props}) => {
   return (
     <Svg
       viewBox="0 0 24 33"
