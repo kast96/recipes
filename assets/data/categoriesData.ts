@@ -15,7 +15,7 @@ export const categoriesData = [
   },
   {
     id: 'secound',
-    name: 'Втрое',
+    name: 'Второе',
     icon: SvgUtensils,
   },
   {
@@ -29,7 +29,7 @@ export const categoriesData = [
     icon: SvgGlassMartiniAlt,
   },
   {
-    id: 'burgers',
+    id: 'fastfood',
     name: 'Фастфуд',
     icon: SvgHamburger,
   },

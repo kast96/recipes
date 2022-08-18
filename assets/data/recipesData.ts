@@ -1,70 +1,139 @@
 import { ImageSourcePropType } from 'react-native'
-import PizzaImg from '../images/recipes/pizza.jpg'
-import BiffImg from '../images/recipes/biff.jpg'
-import PotatoImg from '../images/recipes/potato.jpg'
-import PokeImg from '../images/recipes/poke.jpg'
-import PokeDetailImg from '../images/recipes/poke-detail.jpg'
+import UkraineBorschImg from '../images/recipes/ukraine-borsch.png'
+import UkraineBorschDetailImg from '../images/recipes/ukraine-borsch-detail.png'
+import ChickenRamenImg from '../images/recipes/chicken-ramen.png'
+import ChickenRamenDetailImg from '../images/recipes/chicken-ramen-detail.png'
+import SpicyChickenWingsImg from '../images/recipes/spicy-chicken-wings.png'
+import SpicyChickenWingsDetailImg from '../images/recipes/spicy-chicken-wings-detail.png'
+import ChickenCaesarImg from '../images/recipes/chicken-caesar.png'
+import ChickenCaesarDetailImg from '../images/recipes/chicken-caesar-detail.png'
 
 export const recipesData = [
   {
-    id: 'pizza-la-peperoni',
-    name: 'Pizza la peperoni',
-    categories: ['pizza'],
+    id: 'ukraine-borsch',
+    name: 'Украинский борщ',
+    categories: ['soup'],
     images: {
-      medium: PizzaImg,
-      large: PizzaImg,
+      medium: UkraineBorschImg,
+      large: UkraineBorschDetailImg,
     },
     compound: [
-      {name: 'Dough', weight: '300g'},
-      {name: 'Mayonnaise', weight: '2 spoon'},
-      {name: 'Tomato sauce', weight: '2 spoon'},
-      {name: 'Peperoni', weight: '50g'},
-      {name: 'Cheese', weight: '100g'},
-    ],
-    steps: []
-  },
-  {
-    id: 'biff-corn-sticks-with',
-    name: 'Biff Corn Sticks with Biff Corn Sticks',
-    categories: ['meat'],
-    images: {
-      medium: BiffImg,
-      large: BiffImg,
-    },
-    compound: [],
-    steps: []
-  },
-  {
-    id: 'potato-sticks',
-    name: 'Potato Sticks',
-    categories: ['meat'],
-    images: {
-      medium: PotatoImg,
-      large: PotatoImg,
-    },
-    compound: [],
-    steps: []
-  },
-  {
-    id: 'poke',
-    name: 'Poke',
-    categories: ['burgers', 'meat'],
-    images: {
-      medium: PokeImg,
-      large: PokeDetailImg,
-    },
-    compound: [
-      {name: 'Dough', weight: '300g'},
-      {name: 'Mayonnaise', weight: '2 spoon'},
-      {name: 'Tomato sauce', weight: '2 spoon'},
-      {name: 'Peperoni', weight: '50g'},
-      {name: 'Cheese', weight: '100g'},
+      {name: 'Говядина', weight: '800 г.'},
+      {name: 'Лук репчатый', weight: '2 шт.'},
+      {name: 'Морковь', weight: '2 шт.'},
+      {name: 'Свекла', weight: '2 шт.'},
+      {name: 'Картофель', weight: '3 шт.'},
+      {name: 'Капуста', weight: '1/4 шт.'},
+      {name: 'Помидор', weight: '4 шт.'},
+      {name: 'Чеснок', weight: '3 зубчика'},
+      {name: 'Яблочный уксус', weight: '2 ст. л.'},
+      {name: 'Соль', weight: 'по вкусу'},
+      {name: 'Лавровый лест', weight: '1 шт.'},
+      {name: 'Петрушка', weight: '1 пучок'},
+      {name: 'Сметана', weight: '1 ст. л.'},
+      {name: 'Сало', weight: 'для подачи'},
     ],
     steps: [
-      {title: 'Clear food', description: 'Clear food and wash'},
-      {title: 'Clear food', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis.'},
+      {title: 'Шаг 1', description: 'Готовим бульон для украинского борща. Положите мясо в большую кастрюлю, залейте водой, чтобы покрыла мясо на 5 пальцев. Доведите до кипения и снимите пену. Огонь уменьшите до минимума. Лук, морковь очистите, разрежьте вдоль пополам и припеките на сухой сковородке до коричневых подпалин. Добавьте к мясу овощи. Варите 2,5 ч. За 15 мин. до окончания положите соль и лавровый лист.'},
+      {title: 'Шаг 2', description: 'Процедите бульон. Снимите мясо с костей небольшими кусками.'},
+      {title: 'Шаг 3', description: 'Для заправки украинского борща очистите все овощи. Мелко нарежьте лук. Морковь и свеклу натрите на крупной терке. Перец нарежьте мелкими кубиками. Картофель – средними дольками. Капусту нашинкуйте. Помидоры натрите на терке.'},
+      {title: 'Шаг 4', description: 'Поставьте на средний огонь 2 сковороды. В одну положите лук, в другую – свеклу. Обжа­ривайте, помешивая, 5 мин. К луку добавьте морковь и перец, в свеклу – уксус. Готовьте еще 5 мин. Свеклу снимите с огня, в лук с морковкой положите помидоры. Готовьте еще 5 мин.'},
+      {title: 'Шаг 5', description: 'Вскипятите бульон для борща, положите картофель, варите 10 мин. Положите капусту, варите 5 мин. Добавьте свеклу и лук с морковью, доведите до кипения, варите 10 мин.'},
+      {title: 'Шаг 6', description: 'Чеснок мелко порубите с листьями петрушки, добавьте в борщ вместе с мясом. Посолите и поперчите. Доведите до кипения, выключите огонь и настаивайте украинский борщ 15 мин. Подавайте с толченым салом и сметаной.'},
     ]
-  }
+  },
+  {
+    id: 'chicken-ramen',
+    name: 'Рамен с курицей',
+    categories: ['secound'],
+    images: {
+      medium: ChickenRamenImg,
+      large: ChickenRamenDetailImg,
+    },
+    compound: [
+      {name: 'Курица', weight: '1 шт.'},
+      {name: 'Морковь', weight: '1 шт.'},
+      {name: 'Лук репчатый', weight: '1 шт.'},
+      {name: 'Росток сои или фасоли', weight: '200 г.'},
+      {name: 'Зеленый лук', weight: '1 пучок'},
+      {name: 'Яйца', weight: '6 шт.'},
+      {name: 'Паста мисо', weight: '2 ст. л.'},
+      {name: 'Соевый соус', weight: '100 мл.'},
+      {name: 'Белое вино', weight: '50 мл.'},
+      {name: 'Сахар', weight: '1/2 ч. л.'},
+      {name: 'Соль', weight: 'по вкусу'},
+    ],
+    steps: [
+      {title: 'Шаг 1', description: 'Залейте курицу 3 л холодной воды, доведите до кипения, снимите пену, посолите, добавьте разрезанные пополам морковь и луковицу. Варите на минимальном огне 4 ч. Процедите готовый бульон. Снимите мясо с костей.'},
+      {title: 'Шаг 2', description: 'Вскипятите в кастрюльке, куда войдут все яйца, столько воды, чтобы покрыла яйца. Посолите воду. Выньте яйца из холодильника и аккуратно опустите в кипяток. После закипания варите ровно 7 мин., после чего сразу же слейте кипяток и поставьте яйца под проточную холодную воду на 3 мин. Аккуратно очистите яйца.'},
+      {title: 'Шаг 3', description: 'В зиплок-пакетике с застежкой смешайте сахар, соевый соус и белое вино. Положите в эту смесь яйца и оставьте на 3–4 ч.'},
+      {title: 'Шаг 4', description: 'Очень тонко нарежьте зеленый лук. Если ростки слишком длинные, их можно разрезать пополам. Смешайте мисо-пасту с 1,2 л бульона и на небольшом огне доведите до кипения (оставшийся бульон используйте в других блюдах).'},
+      {title: 'Шаг 5', description: 'Сварите лапшу в большом количестве кипящей подсоленной воды согласно инструкции на упаковке, недоварив 1 мин. Откиньте на дуршлаг, разложите по глубоким мискам.'},
+      {title: 'Шаг 6', description: 'На лапшу выложите зеленый лук, рядом – ростки и кусочки курицы. Залейте кипящим бульоном. Сверху выложите разрезанные пополам яйца, сразу же подавайте.'},
+    ]
+  },
+  {
+    id: 'spicy-chicken-wings',
+    name: 'Острые куриные крылышки к пиву',
+    categories: ['beer', 'meat'],
+    images: {
+      medium: SpicyChickenWingsImg,
+      large: SpicyChickenWingsDetailImg,
+    },
+    compound: [
+      {name: 'Куриные крылья', weight: '1 кг.'},
+      {name: 'Мука', weight: '2 ст. л.'},
+      {name: 'Паприка', weight: '1 ст. л.'},
+      {name: 'Чесночный порошок', weight: '1 ч. л.'},
+      {name: 'Красный острый перец', weight: 'по вкусу'},
+      {name: 'соль', weight: 'по вкусу'},
+      {name: 'Растительное масло', weight: '1 ст. л.'},
+      {name: 'Соевый соус', weight: '2 ст. л.'},
+      {name: 'Оливковое масло', weight: '1 ст. л.'},
+      {name: 'Соус табаско', weight: '2 ст. л.'},
+      {name: 'Кленовый сироп', weight: '1 ст. л.'},
+    ],
+    steps: [
+      {title: 'Шаг 1', description: 'Духовку разогрейте до 200 градусов. Куриные крылышки вымойте проточной водой и обсушите бумажными полотенцами. Разложите на рабочем столе. Разрежьте крылышки по суставу.'},
+      {title: 'Шаг 2', description: 'В мисочке приготовьте панировочную смесь для куриных крылышек. Соедините муку, молотую сладкую паприку, чесночный порошок и красный перец. Тщательно перемешайте.'},
+      {title: 'Шаг 3', description: 'Положите куриные крылышки а плотный полиэтиленовый пакет. Засыпьте из мисочки приготовленную панировочную смесь. Закройте пакет и основательно потрясите, чтобы она равномерно распределилась по крылышкам.'},
+      {title: 'Шаг 4', description: 'Выложите куриные крылышки на противень застеленный фольгой и смазанный растительным маслом, в один слой на небольшом расстоянии друг от друга. Поставьте в духовку на 20 минут.'},
+      {title: 'Шаг 5', description: 'Приготовьте глазурь для куриных крылышек. В мисочке смешайте соевый соус, кленовый сироп, соус табаско и оливковое масло. По желанию, можно добавить немного молотой сладкой паприки.'},
+      {title: 'Шаг 6', description: 'Достаньте противень с крылышками из духовки. Смажьте приготовленной глазурью запекайте еще 5 минут. После чего переверните крылышки, снова смажьте глазурью и запекайте еще 5 минут.'},
+      {title: 'Шаг 7', description: 'Горячие куриные крылышки выложите на большую тарелку и подайте на стол. В качестве дополнения можно использовать соус блю чиз или острый томатный соус по вашему вкусу.'},
+    ]
+  },
+  {
+    id: 'chicken-caesar',
+    name: 'Цезарь с курицей',
+    categories: ['salad'],
+    images: {
+      medium: ChickenCaesarImg,
+      large: ChickenCaesarDetailImg,
+    },
+    compound: [
+      {name: 'Салат ромэн', weight: '160 г.'},
+      {name: 'Филе курицы', weight: '200 г.'},
+      {name: 'Помидоры чери', weight: '100 г.'},
+      {name: 'Сыр пармезан', weight: '20 г.'},
+      {name: 'Гренки', weight: '2 горсти'},
+      {name: 'Масло оливковое', weight: '4 ст. л.'},
+      {name: 'Соль', weight: 'по вкусу'},
+      {name: 'Свежемолотый черный перец', weight: 'по вкусу'},
+      {name: 'Вино белое сухое', weight: ''},
+      {name: 'Майонез', weight: '150 г.'},
+      {name: 'Йогурт натуральный', weight: '150 г.'},
+      {name: 'Каперсы', weight: '20 г.'},
+      {name: 'Горчица дижонская', weight: '20 г.'},
+      {name: 'Филе анчоуса', weight: '100 г.'},
+    ],
+    steps: [
+      {title: 'Шаг 1', description: 'Подготовить ингредиенты салата. Куриное филе промыть, нарезать небольшими брусочками, посолить, поперчить и обжарить на оливковом масле, понемногу добавляя белое вино.'},
+      {title: 'Шаг 2', description: 'Для соуса салата перемешать все ингредиенты в блендере. Обратите внимание: рецепт соуса дан на 10 порций. На 2 порции салата требуется 6 ст. л. соуса. Готовый соус можно хранить в холодильнике около недели при температуре 4С.'},
+      {title: 'Шаг 3', description: 'Листья салата промыть проточной водой, затем тщательно обсушить бумажными полотенцами. Порвать на небольшие кусочки и заправить приготовленным ранее соусом.'},
+      {title: 'Шаг 4', description: 'Добавить кусочки курицы и перемешать. Выложить на тарелку или в салатник. Помидоры вымыть и разрезать на половинки. Выложить на салат вместе с гренками и сыром.'},
+    ]
+  },
 ] as Array<RecipesType>
 
 export type RecipesType = {
