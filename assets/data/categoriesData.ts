@@ -44,7 +44,7 @@ export const categoriesData = [
     icon: SvgDrumstickBite,
   },
   {
-    id: 'ice',
+    id: 'dessert',
     name: 'Десерты',
     icon: SvgIceCream,
   }
